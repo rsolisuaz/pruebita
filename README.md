@@ -71,18 +71,38 @@ Este comando lo dará directamente en la consola de MySQL y no será incluido en
 	SELECT user,host FROM mysql.user;
    ```
 
+4. El segundo archivo (**datos.sql**)  deberá cumplir con lo siguiente: 
+   - Deberá iniciar con los siguientes cuatro comandos (recuerde sustituir los XXXXXXXX por su matrícula):
+   ```
+   USE controlescolar_ej2021;
+   DELETE FROM carrera_XXXXXX;
+   DELETE FROM materia_XXXXXX; 
+   DELETE FROM profesor_XXXXXX;
+   ```
+   - A continuación deberá contener sentencias SQL para agregar registros a cada una de las tablas:
+     - Para la tabla `carrera_XXXXXX` escriba las sentencias SQL para agregar las carreras de Ingenieria de Software con clave INGSW2010, Ingenieria en Computacion con clave COMP2005 e Ingenieria en Electronica Industrial  con clave INGEI2017).
+     - Para la tabla `profesor_XXXXXX` escriba las sentencias SQL para agregar por lo menos la información de `rfc`, `nombre`, `ap_paterno`, `ap_materno`  y `email` de **al menos 3 profesores** que les estén impartiendo clase (el **rfc** y/o **email** pueden ser ficticios/inventados, los demás campos solicitados deben ser reales)
+     - Para la tabla `materia_XXXXXX` escriba las sentencias SQL para agregar la información de las materias que esté cursando actualmente, **mínimo 4**, note que el valor de clave_carrera será siempre INGSW2010.
+   - Después de estos comandos de inserción de registros ponga los siguientes comandos al final del archivo **datos.sql** (recuerde sustituir los XXXXXXXX por su matrícula): 
+     ```
+     SELECT rfc, nombre, ap_paterno, ap_materno,  email FROM profesor_XXXXXXXX;
+	 SELECT * FROM materia_XXXXXXXX;
+	 SELECT * FROM carrera_XXXXXXXX;
+     ```
 
-La lista de requerimientos que deben cumplirse en esta práctica los puede encontrar en el archivo **PracticasLaboratorio05_24Sep2020.pdf**
+5. En resumen, el archivo **tablas.sql** deberá contener 12 comandos SQL y el archivo **datos.sql** deberá contener al menos 17 comandos SQL.
+
+6. **ANTES DE HACER EL PUSH FINAL PARA SUBIR LOS SCRIPTS AL REPOSITORIO REMOTO VERIFIQUEN QUE ESTOS FUNCIONAN CORRECTAMENTE CONECTANDOSE A LA CONSOLA DE MYSQL Y EJECUTANDOLOS CON EL COMANDO SOURCE**.
 
 
 ## CALIFICACIÓN
+
 La calificación para esta práctica no les será emitida de manera inmediata al subir su solución, sin embargo se realizarán pruebas para verificar que se pueden ejecutar los scripts SQL tablas.sql y datos.sql sin problemas en MySQL al hacer push de su practica.
 
 **SI SUS SCRIPTS NO PUEDEN SER EJECUTADOS SIN ERRORES OBTENDRÁN CERO PUNTOS**
 
 
 ## NOTAS IMPORTANTES
-
 
 1. Recuerda que de acuerdo a lo visto en las Prácticas Anteriores el proceso que debes estar haciendo es:
    - Haz cambios  en los archivos **tablas.sql** y **datos.sql**
